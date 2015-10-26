@@ -17,21 +17,22 @@ var reactify     = require('reactify');
 gulp.task('browserify', function() {
   var bundler = browserify({
     // Required watchify args
-    cache: {}, packageCache: {}, fullPaths: true,
+    // cache: {}, packageCache: {}, fullPaths: true,
     // Specify the entry point of your app
-    entries: ['./src/javascript/app.js'],
+    entries: ['./src/javascript/main.js'],
     // Add file extentions to make optional in your requires
-    extensions: ['.eco',".jsx"],
+    // extensions: ['.eco',".jsx"],
     // Enable source maps!
-    debug: false
+    // debug: false
   });
 
   var bundle = function() {
     // Log when bundling starts
     bundleLogger.start();
     
-    bundler.transform(reactify);
+    // bundler
     return bundler
+      .transform(reactify)
       .bundle()
       // Report compile errors
       .on('error', handleErrors)
@@ -39,7 +40,7 @@ gulp.task('browserify', function() {
       // stream gulp compatible. Specifiy the
       // desired output filename here.
       // .transform('reactify')
-      .pipe(source('app.js'))
+      .pipe(source('main.js'))
       // Specify the output destination
       .pipe(gulp.dest('./build/'))
       // Log when bundling completes!
