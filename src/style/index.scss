@@ -1,13 +1,21 @@
-// Base css
-@import "base/clear.scss";
 
 // Dependencies
-@import "dependencies/bootstrap";
+@import "dependencies/normalize";
 
 // ------- Project ------- //
 @import "base/typography.scss";
-@import "variables";
+// @import "variables";
+
+// General Styles
+@import "sections/general.scss";
+
 // Sections
-@import "sections/header.scss";
-@import "sections/footer.scss";
+@import "sections/navbar.scss";
+@import "sections/galleries.scss";
+@import "sections/experience.scss";
+@import "sections/bucket.scss";
+@import "sections/slider.scss";
+@import "sections/profile.scss";
+@import "sections/modals.scss";
+
 

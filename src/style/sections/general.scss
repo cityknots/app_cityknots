@@ -1,0 +1,47 @@
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #E0E0E0;
+  color: #828282;
+  font-size: 16px;
+  padding: 55px 0 50px;
+}
+
+// Containers
+.container {
+  max-width: 1200px;
+  margin: 0 20px;
+}
+
+// Links
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover,&.active {
+    color: #40bfad;
+  }
+}
+
+// Lists
+ul {
+  list-style: none;
+  li {
+
+  }
+}
+
+// Headings
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 400;
+}
+
+// Spacing
+hr {
+  border-top: 1px solid rgba(0,0,0,.1);
+  border-bottom: 0;
+}
+
+// Figures
+
+figure {
+  margin: 0;
+}

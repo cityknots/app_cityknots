@@ -1,8 +1,13 @@
 var React = require('react');
+var AppActions = require('../actions/app-actions');
+
 
 var App = React.createClass({
+  handler: function(){
+    AppActions.addItem('this is an item')
+  },
   render:function(){
-    return <h1>My Flux App tksnsnkjinst</h1>
+    return <h1 onClick={this.handler}>My Flux App tksnsnkjinst</h1>
   }
 });
 

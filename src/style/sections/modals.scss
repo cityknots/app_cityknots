@@ -1,0 +1,176 @@
+// Modals
+body.active-modal {
+ overflow: hidden;
+}
+
+.modal {
+  display: none;
+  &.active {
+    // Modal Background Overlay
+    display: block;
+
+    .modal-overlay {
+      position: fixed;
+      z-index: 6;
+      top: 0;left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,.6);
+      overflow: auto;
+
+      // Modal Content Box
+
+      .modal-content {
+        margin: 20px auto;
+        background-color: #fff;
+        position: relative;
+
+        // Modal Close Button
+        .modal-close {
+          position: absolute;
+          top: 5px;right: 5px;
+
+          // Modal Close Button on Mobile
+          @media (max-width: 768px) {
+            top: 15px;right: 15px;
+          }
+        }
+
+        // Modal Header
+
+        .modal-header {
+
+          .title {
+            padding:10px 15px;
+            margin: 0;
+          }
+
+          a {
+            line-height: 55px;
+            padding: 0 15px;
+            display: inline-block;
+            font-size: 1.2em;
+            border-right: 1px solid #E6E6E6;
+
+            .fa {
+              margin-right: 5px;
+            }
+
+            &:hover, &.active {
+              background-color: rgba(0,0,0,.03);
+            }
+
+            // Modal header Links on Mobile
+            @media (max-width: 768px) {
+              font-size: 1em;
+            }
+          }
+        }
+
+        // Modal Featured Content
+
+        .modal-featured {
+          img {
+            width: 100%;
+          }
+        }
+
+        // Modal Slider
+
+        .modal-slider {
+          position: relative;
+
+          .slider-inner {
+            // max-width: 1200px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            margin: auto;
+            position: relative;
+            padding: 0;
+
+            // Modal Slider Items Wrapper
+            .slider-items {
+              white-space: nowrap;
+              // height: 400px;
+
+              // Modal Individual Slider Items
+              .slider-item {
+                white-space: normal;
+                display: inline-block;
+                width: 80%;
+                height: 300px;
+                overflow: hidden;
+
+                .thumbnail {
+                  height: 100%;
+                  img {
+                    width: 100%;
+                  }
+                }
+              }
+            }
+          }
+
+          // Slider Controls
+          .slider-controls {
+
+            .slider-control {
+              opacity: .6;
+              transition: opacity .4s ease;
+              position: absolute;
+              top: 40%;
+              background: none;
+              color: #fff;
+              z-index: 4;
+              border: none;
+              font-size: 2.2em;
+              text-shadow: 0 3px 3px rgba(0,0,0,.4);
+
+              &.left {
+                left: 5px;
+              }
+
+              &.right {
+                right: 2px;
+              }
+            }
+
+          }
+        }
+
+        // Modal Body
+
+        .modal-body {
+          background-color: #F2F2F2;
+          padding: 5px 20px 10px;
+          color: #000;
+
+          .tag-button {
+            background: none;
+            border: 1px solid rgba(0,0,0,.3);
+          }
+
+          > img {
+             width: 100%;
+          }
+        }
+
+        // Modal Sizing
+
+        &.modal-lg {
+          max-width: 800px;
+        }
+        &.modal-sm {
+          max-width: 500px;
+        }
+
+        // Modal Content on Mobile
+        @media (max-width: 768px) {
+          margin: 0px;
+        }
+
+      }
+    }
+
+  }
+}

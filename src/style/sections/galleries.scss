@@ -1,0 +1,178 @@
+// Galleries
+
+
+//===============================================
+// Layout
+//===============================================
+.lep-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    .slides-container {
+        position: relative;
+        height: 100%;
+        width: auto;
+        transition: all .4s ease;
+        z-index: 1;
+    }
+    // intiial strucure for fade animation
+    &.leps-type-fade {
+        & > .slides-container {
+            // @todo direction needed
+            & > .slide-item {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    // intiial strucure for slide animation
+    &.leps-type-fade {
+        & > .slides-container {
+            // @todo direction needed
+
+            & > .slide-item {
+                float: left;
+                height: 100%;
+                opacity: 0;
+                transition: all .2s ease;
+
+                &.leps-active-slide {
+                    opacity: 1;
+                    z-index: 9999;
+                }
+            }
+        }
+    }
+
+    /**
+     *
+     * Navigator
+     *
+     **/
+    .leps-navigator {
+        position: absolute;
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        display: block;
+        z-index: 9999;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        & > li {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 10px;
+            margin: 5px;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+            }
+            &.active {
+                background-color: rgba(255,255,255,0.8);
+                cursor: auto;
+            }
+        }
+    }
+
+    /**
+     *
+     * Directors
+     *
+     **/
+     .leps-directives {
+        color: rgba(255, 255, 255, 0.7);
+        margin: 0;
+
+        li {
+            position: absolute;
+            display: block;
+            z-index: 9999;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            a {
+                display: block;
+                text-transform: uppercase;
+                font-size: 2em;
+                line-height: 2em;
+                text-align: center;
+                cursor: pointer;
+                padding: .5em 1em;
+                text-shadow: 0 2px 4px rgba(0,0,0,.3);
+            }
+            &.leps-next   {
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                border-radius: 20px 0 0 20px;
+                a {
+
+                }
+                @media (max-width: 768px) {
+                  top: 90%;
+                }
+            }
+            &.leps-prev {
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                // @include transform( translateY(-50%) );
+                border-radius: 0 20px 20px 0;
+                a {
+
+                }
+                @media (max-width: 768px) {
+                  top: 90%;
+                }
+            }
+            &.leps-inactive {
+                pointer-events: none;
+                color: rgba(255,255,255,.4);
+            }
+        }
+     }
+}
+
+.leps-slider {
+    width: 100%;
+    height: 500px;
+
+    .slide-item {
+        height: 100%;
+        overflow: hidden;
+        text-align: left ;
+
+        .slide-caption {
+          color: #fff;
+          width: 100%;
+          height: 55%;
+          overflow: auto;
+          margin: auto;
+          position: absolute;
+          top: 0; left: 0; bottom: 0; right: 0;
+
+          h1,h2,h3,h4,h5,h6,p {
+            padding: 0 70px;
+
+            @media (max-width: 768px) {
+              padding: 0 20px;
+            }
+          }
+        }
+        img {
+            width: auto;
+            height: 100%;
+            margin: auto;
+        }
+    }
+}
+
+// Helper Classes
+.hidden { display: none !important; }

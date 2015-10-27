@@ -1,0 +1,69 @@
+// Sliders
+
+.slider {
+  position: relative;
+  margin: 0 0 40px;
+
+
+  .slider-inner {
+    max-width: 1200px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: auto;
+    position: relative;
+    padding: 0 0 10px;
+
+
+
+    // Slider Items Wrapper
+    .slider-items {
+      white-space: nowrap;
+      // height: 400px;
+
+      // Individual Slider Items
+      .slider-item {
+        white-space: normal;
+        margin: 0 20px 0 0;
+      }
+    }
+  }
+
+  // Slider Controls
+  .slider-controls {
+
+    .slider-control {
+      opacity: .6;
+      transition: opacity .4s ease;
+      position: absolute;
+      top: 40%;
+      background: none;
+      color: #fff;
+      z-index: 4;
+      border: none;
+      font-size: 2.2em;
+      text-shadow: 0 3px 3px rgba(0,0,0,.4);
+
+      &.left {
+        left: 5px;
+      }
+
+      &.right {
+        right: 2px;
+      }
+    }
+
+  }
+
+  &:hover {
+    .slider-controls {
+      .slider-control {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Sliders on Mobile
+  @media (max-width: 768px) {
+    margin: 0 -20px 40px 0;
+  }
+}

@@ -1,0 +1,136 @@
+// Navbar
+
+.navbar{
+  background-color: #fff;
+  height: 55px;
+  border-bottom: 1px solid #E6E6E6;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,.05);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 4;
+
+  // All Navbar Links
+  a {
+    line-height: 55px;
+    padding: 0 15px;
+    display: inline-block;
+    &:hover {
+      background-color: rgba(0,0,0,.03);
+    }
+  }
+
+  // Navbar Brand
+  .navbar-logo{
+    border-right: 1px solid #E6E6E6;
+    padding: 0 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  // Navbar Search Bar
+  .navbar-search {
+    display: block;
+    padding: 0 260px 0 80px;
+
+    .input {
+      width: 100%;
+      display: block;
+      border: none;
+      border-bottom: 1px solid #E6E6E6;
+      padding: 18px 0 5px 22px;
+      position: relative;
+      &:focus {
+        outline: none;
+      }
+    }
+    .fa {
+      position: absolute;
+      top: 18px;
+      z-index: 2;
+      color: inherit;
+    }
+
+    // Navbar Search on Mobile
+    @media (max-width: 768px) {
+      padding: 0 85px 0 80px;
+    }
+  }
+
+  // Navbar Additional Options
+  .nav-options {
+    position: absolute;
+    right: 0; top: 0;
+    background-color: #fff;
+
+    .search-options {
+      display: inline-block;
+      margin: 0 -2px 0 0;
+      padding: 0;
+      li {
+        a {
+          padding: 0 8px;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      // Search Options on Mobile
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+
+      .dropdown-menu {
+        display: inline-block;
+        position: relative;
+
+        .menu-button {
+          border-left: 1px solid #E6E6E6;
+        }
+
+        ul {
+          opacity: 0;
+          position: absolute;
+          right: 10px;top: 55px;
+          margin: 0; padding: 0;
+          text-align: center;
+          width: 120px;
+          background-color: rgba(0,0,0,.7);
+          transition: opacity .2s ease;
+          pointer-events: none;
+
+          li {
+            a {
+              line-height: 40px;
+              color: rgba(255,255,255,.8);
+              display: block;
+
+              &:hover {
+                color: #40bfad;
+              }
+            }
+          }
+        }
+
+        &:hover {
+          ul {
+            opacity: 1;
+            pointer-events: auto
+          }
+        }
+      }
+    }
+  }
+
+}
