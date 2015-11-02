@@ -12,7 +12,9 @@ var bundleLogger = require('../util/bundleLogger');
 var gulp         = require('gulp');
 var handleErrors = require('../util/handleErrors');
 var source       = require('vinyl-source-stream');
-var reactify     = require('reactify');
+var react        = require('react');
+var babelify     = require('babelify');
+
 
 gulp.task('browserify', function() {
   var bundler = browserify({
@@ -29,18 +31,17 @@ gulp.task('browserify', function() {
   var bundle = function() {
     // Log when bundling starts
     bundleLogger.start();
-    
-    // bundler
+
     return bundler
-      .transform(reactify)
+      .transform(babelify, {presets: ["es2015", "react"]})
       .bundle()
+      
       // Report compile errors
       .on('error', handleErrors)
       // Use vinyl-source-stream to make the
       // stream gulp compatible. Specifiy the
       // desired output filename here.
-      // .transform('reactify')
-      .pipe(source('main.js'))
+      .pipe(source('app.js'))
       // Specify the output destination
       .pipe(gulp.dest('./build/'))
       // Log when bundling completes!
