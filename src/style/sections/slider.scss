@@ -1,4 +1,8 @@
 // Sliders
+.slide-1, .slide-2, .slide-3 {
+  background: url('./images/carousel-img1.jpg');
+  background-size: cover;
+}
 
 .slider {
   position: relative;
