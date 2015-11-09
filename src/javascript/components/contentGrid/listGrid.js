@@ -3,11 +3,13 @@ import Lists from '../../models/listModel';
 import ListBucketItem from '../items/listBucketItem';
 
 var BucketList = React.createClass({
+
 	render: function(){
-		if (this.props.gridElements.elements.length > 0){
+		// console.log(this.props);
+		if (this.props.gridElements){
 			return <div>
 				{
-				this.props.gridElements.elements.map(function (element) {
+				this.props.gridElements.map(function (element) {
 					return <div> 
 							<h3>{element.tittle}</h3>
 							<div className="slider">
@@ -20,7 +22,7 @@ var BucketList = React.createClass({
 									<div className="slider-items">
 										{
 											element.elements.map(function(bucket){
-												return <div> Hi</div>
+												return <ListBucketItem item={bucket} key={bucket.objectId} />
 											})
 										}
 									</div>

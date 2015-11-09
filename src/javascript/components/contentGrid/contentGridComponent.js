@@ -1,31 +1,15 @@
 import React from 'react';
+import Reflux from 'reflux';
 import BucketList from './listGrid';
 import Lists from '../../models/listModel';
-
-Lists.bind("refresh", function(){
-	
-	ContentGrid.refreshData;
-})
+import ListStore from '../../stores/listStore';
 
 var ContentGrid = React.createClass({
-	getInitialState: function(){
-		return {
-			BucketListElements: {
-				tittle:'Most Recomended Bucket Lists', 
-				elements: [],
-			}
-		}
-	},
-	refreshData: function(){
-		console.log('refresh');
-		this.setState({
-			BucketListElements: {
-				tittle:'Most Recomended Bucket Lists', 
-				elements: Lists.all(),
-			}
-		})
-	},
+	mixins: [Reflux.connect(ListStore, 'BucketListElements')],
+
 	render: function(){
+		// console.log('Content Grid --->');
+		// console.log(this.state.BucketListElements);
 		return <div className="container">
 			<BucketList gridElements={this.state.BucketListElements}/>
 		</div>

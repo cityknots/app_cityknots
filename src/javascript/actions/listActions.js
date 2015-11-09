@@ -1,7 +1,7 @@
 import Reflux from 'reflux';
 
-let ListActions = Reflux.createActions([
-  'fetchList'
+var ListActions = Reflux.createActions([
+  'fetchList','refreshListData'
 ]);
 
 export default ListActions;
