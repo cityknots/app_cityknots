@@ -1,36 +1,18 @@
 /*
 *	Module dependencies
 */
-import Slider from './slider';
 import React from 'react';
+import Manager from './manager/index';
+import Experiences from './models/ExperienceModel';
+import MainComponent from './components/mainComponent';
 
-// import Parse_Init from "./parse_start";
-// import Parse from 'parse';
-// import ParseReact from 'parse-react';
+Manager();
 
-// Init slider plug-in
-Slider();
-
-/*
- * Module dependencies
- */
-import ImageGrid from './components/listComponent';
-
-// Cada 5 segundos: recargar!
-// setInterval(function() {
-//     ListActions.fetchList(); 
-// }, 5000);
-
-React.render(
-  <ImageGrid />,
-  document.getElementById('main')
-)
-
-
-
-
-
-
+Experiences.bind('refresh',function(){
+	React.render(
+		<MainComponent />, document.getElementById('app')
+	)
+})
 
 
 
