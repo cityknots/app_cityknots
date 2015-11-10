@@ -5,7 +5,7 @@ var ListBucket = React.createClass({
 		return <div className="slider-item bucket">
             <div className="thumbnail">
               <div className="details">
-                <i className="fa fa-compass"></i>
+                <i className="font-compass"></i>
                 {this.props.item.experiences.length + ' experiences'}
               </div>
               <div className="overlay">
@@ -18,12 +18,12 @@ var ListBucket = React.createClass({
                     ...and 3 more
                   </ul>
                   <div className="options">
-                    <button className="btn" id="open-large-modal"><i className="fa fa-eye"></i> explore</button>
-                    <button className="btn" id="open-small-modal"><i className="fa fa-plus-square-o"></i> add to list</button>
+                    <button className="btn" id="open-large-modal"><i className="font-eyes"></i> explore</button>
+                    <button className="btn" id="open-small-modal"><i className="font-add"></i> add to list</button>
                   </div>
                 </div>
               </div>
-              // <img src="./images/bucket-img1.png" alt=""></img>
+              <img src="./images/bucket-img1.png" alt=""></img>
             </div>
             <div className="caption">
               <span className="name">{this.props.item.listTitle}</span>

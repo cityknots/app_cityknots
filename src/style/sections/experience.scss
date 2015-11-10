@@ -14,7 +14,7 @@
     position: relative;
 
     img {
-      width: 100%;
+      height: 100%;
       transition: all .3s ease;
     }
 
@@ -26,8 +26,8 @@
       padding: 10px 15px;
       font-size: .8em;
       opacity: 0;
-      .fa {
-        font-size: 1.8em;
+      .font-heartfilled {
+        font-size: 1.4em;
         vertical-align: middle;
         margin-right: 5px ;
       }
@@ -62,9 +62,15 @@
             margin: 0 auto 10px;
             display: block;
             width: 160px;
+            .font-eyes, .font-add {
+              font-size: 1.2em;
+              vertical-align: middle;
+              margin-right: 5px ;
+            }
 
             &:hover {
-              background-color: rgba(0,0,0,.3);
+              background-color: rgba(224, 224, 224, 0.85);
+              color: #000;
             }
           }
         }
@@ -76,7 +82,7 @@
     .thumbnail {
 
       img {
-        width: 105%;
+        // width: 105%;
       }
 
       .details {

@@ -2,14 +2,7 @@ import React from 'react';
 
 var SliderHeader = React.createClass({
 	componentDidMount: function() {
-		var slider = new lepsSlider({
-			// animation: "slide",
-			direction: 'ltr',
-			autoSlide: true,
-			animationSpeed: 5,
-			pauseOnHover: true,
-			keyboard: true, 
-		})
+		var slider = new lepsSlider()
 	},
 	
 	render: function() {

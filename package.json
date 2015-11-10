@@ -8,6 +8,7 @@
     "url": ""
   },
   "dependencies": {
+    "babelify": "^6.1.2",
     "browser-sync": "^2.9.1",
     "browserify": "^5.10.1",
     "browserify-shim": "~3.7.0",
@@ -28,15 +29,11 @@
     "react-async": "^2.1.0",
     "react-router-component": "^0.25.1",
     "reactify": "^1.1.1",
-    "reflux": "^0.2.8",
+    "reflux": "^0.3.0",
     "require-dir": "^0.1.0",
     "rimraf": "^2.2.8",
     "vinyl-source-stream": "~0.1.1",
     "watchify": "~1.0.2"
   },
-  "devDependencies": {
-    "babel-preset-es2015": "^6.0.15",
-    "babel-preset-react": "^6.0.15",
-    "babelify": "^7.2.0"
-  }
+  "devDependencies": {}
 }

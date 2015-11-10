@@ -1,6 +1,6 @@
 import React from 'react';
 // import Lists from '../../models/listModel';
-import ListBucketItem from '../items/listBucketItem';
+import ExperienceItem from '../items/experienceItem';
 
 var BucketList = React.createClass({
 
@@ -21,8 +21,8 @@ var BucketList = React.createClass({
 								<div className="slider-inner">
 									<div className="slider-items">
 										{
-											element.elements.map(function(bucket){
-												return <ListBucketItem item={bucket} key={bucket.objectId} />
+											element.elements.map(function(experiene){
+												return <ExperienceItem experience={experiene} />
 											})
 										}
 									</div>

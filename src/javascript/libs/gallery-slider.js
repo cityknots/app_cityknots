@@ -43,8 +43,8 @@
       directivesNav: true,            // {boolean} - Create navigation for previous/next navigation? (true/false)
       directivesContainer: "",        // {string|array} - Custom css class name(s) to be added to Navigation menu, could be array or space separated string of names
       pasueButton: true,              // {boolean} - Show pause button
-      prevText: "<i class='fa fa-chevron-left'></i>",               // {string} - Set the text for the "previous" directionNav item
-      nextText: "<i class='fa fa-chevron-right'></i>",               // {string} - Set the text for the "next" directionNav item
+      prevText: "<i class='font-leftarrow'></i>",               // {string} - Set the text for the "previous" directionNav item
+      nextText: "<i class='font-rightarrow'></i>",               // {string} - Set the text for the "next" directionNav item
 
       // Maual navigation
       keyboard: true,                 // {boolean} - Allow slider navigating via keyboard left/right keys
@@ -241,7 +241,11 @@
    *
    **/
   function _previous () {
-    _goTo.call(this, this._options.currentSlide - 1)
+    if (this._options.currentSlide == 0) {
+      _goTo.call(this, 2)
+    }else{
+      _goTo.call(this, this._options.currentSlide - 1)
+    } 
   }
 
   /**
@@ -250,7 +254,12 @@
    *
    **/
   function _next () {
-    _goTo.call(this, this._options.currentSlide + 1)
+    if (this._options.currentSlide == 2) {
+      _goTo.call(this, 0)
+    }else{
+      _goTo.call(this, this._options.currentSlide + 1)
+    }
+    
   }
 
   function _activateIndicator (index) {
@@ -275,13 +284,13 @@
     // normilizing index
     // @todo check loop or one directional
     if (index >= this.slideElements.length -1) {
-      _warn('Provided index greater than number of existing slides. navigating to last slide instead.');
-      _addClass(this._options.navigatorsNavEl.getElementsByClassName('leps-next')[0], 'leps-inactive');
-      index = this.slideElements.length - 1;
+      // _warn('Provided index greater than number of existing slides. navigating to last slide instead.');
+      // _addClass(this._options.navigatorsNavEl.getElementsByClassName('leps-next')[0], 'leps-inactive');
+      // index = this.slideElements.length - 1;
     } else if (index <= 0) {
-      _warn('Provided a negative index. navigating to first slide instead.');
-      _addClass(this._options.navigatorsNavEl.getElementsByClassName('leps-prev')[0], 'leps-inactive');
-      index = 0;
+      // _warn('Provided a negative index. navigating to first slide instead.');
+      // _addClass(this._options.navigatorsNavEl.getElementsByClassName('leps-prev')[0], 'leps-inactive');
+      // index = 0;
     } else {
       _removeClass(this._options.navigatorsNavEl.getElementsByClassName('leps-next')[0], 'leps-inactive');
       _removeClass(this._options.navigatorsNavEl.getElementsByClassName('leps-prev')[0], 'leps-inactive');

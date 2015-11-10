@@ -1,7 +1,7 @@
 import Reflux from 'reflux';
 import $ from 'jquery';
 import ExperienceActions from '../actions/experiencesActions';
-import ListActions from '../actions/listActions';
+// import ListActions from '../actions/listActions';
 import Experience from '../models/ExperienceModel';
 
 var ExperienceStore = Reflux.createStore({
@@ -23,15 +23,29 @@ var ExperienceStore = Reflux.createStore({
           type: 'GET',
           context: this,
           success: function(data) {
-              console.log('Llegaron experiences')
+              console.log('Llegaron experiences');
               Experience.refresh(data.results);
-              console.log(ListActions.refreshListData);
-              ListActions.refreshListData();
-              this.experiences = data.results;
-              // this.trigger(this.experiences);
+              let arr = [];
+              let elements = [];
+              for (let i = 0; i < data.results.length; i++) {
+                let arrImgs = data.results[i].expImages.split(",");
+                data.results[i].images = arrImgs;
+                elements.push(data.results[i]);
+                if (i % 9 == 0 && i != 0) {
+                  let newObj = {
+                    tittle: " Experiences",
+                    elements: elements,
+                  }
+                  arr.push(newObj);
+                  elements = [];
+                };
+              };
+              this.experiences = arr;
+              this.trigger(this.experiences);
               // console.log(Experience.all());
           }
       });
+      // ListActions.refreshListData();
     }
 });
 

@@ -26,9 +26,13 @@
       z-index: 3;
       padding: 10px 15px;
       font-size: .8em;
-      .fa {
-        font-size: 1.8em;
-        vertical-align: middle;
+      -webkit-transition: top 0.3s;
+      -moz-transition: top 0.3s;
+      -o-transition: top 0.3s;
+      transition: top 0.3s;
+      .font-compass {
+        font-size: 1.2em;
+        vertical-align: sub;
         margin-right: 5px ;
       }
     }
@@ -70,9 +74,15 @@
             border: 1px solid;
             padding: 5px 10px;
             margin: 0 5px;
+            .font-eyes, .font-add {
+              font-size: 1em;
+              vertical-align: sub;
+              margin-right: 5px ;
+            }
 
             &:hover {
-              background-color: rgba(0,0,0,.3);
+              background-color: rgba(224, 224, 224, 0.85);
+              color: #000;
             }
           }
         }
@@ -83,7 +93,10 @@
   &:hover {
     .thumbnail {
       img {
-        height: 105%;
+        // height: 105%;
+      }
+      .details {
+          top: -20%;
       }
 
       .overlay {
