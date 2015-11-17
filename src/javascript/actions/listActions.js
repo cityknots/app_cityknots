@@ -4,7 +4,7 @@
 
 import Reflux from 'reflux';
 
-let ListActions = Reflux.createActions([
+var ListActions = Reflux.createActions([
   'printAll'
 ]);
 

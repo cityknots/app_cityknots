@@ -1,6 +1,10 @@
 import React from 'react';
+import Modal from '../modal/modalComponent';
 
 var ExperienceItem = React.createClass({
+  makeAlert: function(){
+    alert("Hi bas")
+  },
 	render: function(){
 		return <div className="slider-item experience">
                   <div className="thumbnail">
@@ -10,7 +14,7 @@ var ExperienceItem = React.createClass({
                     <div className="overlay">
                       <div className="overlay-content">
                         <div className="options">
-                          <button className="btn"><i className="font-eyes"></i> explore</button>
+                          <button onClick={this.makeAlert} className="btn"><i className="font-eyes"></i> explore</button>
                           <button className="btn"><i className="font-add"></i> add to list</button>
                         </div>
                       </div>
