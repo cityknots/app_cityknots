@@ -7,7 +7,6 @@ import ContentGrid from './ContentGrid/ContentGridComponent';
 var MainComponent = React.createClass({
 	render: function(){
 		return <div>
-			<NavBar />
 			<section id="mainContent">
 				<Slider />
 				<ContentGrid />

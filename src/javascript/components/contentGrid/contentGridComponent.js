@@ -13,8 +13,8 @@ var ContentGrid = React.createClass({
 	],
 
 	render: function(){
-		// console.log('Content Grid --->');
-		// console.log(this.state.BucketListElements);
+		console.log('Content Grid --->');
+		console.log(this.state.BucketListElements);
 		return <div className="container">
 			<BucketList gridElements={this.state.BucketListElements}/>
 			<ExperienceGrid gridElements={this.state.ExperienceElements}/>

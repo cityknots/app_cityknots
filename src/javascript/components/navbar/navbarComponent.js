@@ -1,4 +1,6 @@
 import React from 'react';
+import { default as Router, Route } from 'react-router';
+let RouterHandler = Router.RouterHandler;
 
 var NavComponent = React.createClass({
 
@@ -25,8 +27,9 @@ var NavComponent = React.createClass({
 				 		<ul>
 				 			<li>
 				 				<a href="">My items</a>
-				 				<a href="/profile.html">Account</a>
+				 				<a href="/user">Account</a>
 				 				<a href="">Sign Out</a>
+				 				<RouterHandler />
 				 			</li>
 				 		</ul>
 				 	</div>
